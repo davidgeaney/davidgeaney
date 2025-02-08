@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
 import { WireframeCube } from "@/components/wireframe-cube"
+import Image from "next/image"
 
 export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -113,4 +114,30 @@ export default function HeroSection() {
     </div>
   )
 }
+
+const ProjectCard = ({ title, description, year, image, link }: Project) => {
+  return (
+    <Link
+      href={link}
+      className="group relative col-span-12 flex h-[400px] items-center justify-center overflow-hidden rounded-lg sm:col-span-6 lg:col-span-4"
+    >
+      <Image
+        src={image}
+        alt={title}
+        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+        width={500}
+        height={400}
+      />
+      
+      {/* Only show text overlay on larger screens */}
+      <div className="absolute hidden w-full bg-gradient-to-t from-neutral-900/80 via-neutral-900/40 to-transparent p-4 text-white transition-all duration-300 group-hover:bottom-0 sm:block sm:bottom-0">
+        <div className="flex items-center justify-between">
+          <h3 className="text-lg font-medium">{title}</h3>
+          <span className="text-sm opacity-80">{year}</span>
+        </div>
+        <p className="mt-2 text-sm opacity-80">{description}</p>
+      </div>
+    </Link>
+  );
+};
 

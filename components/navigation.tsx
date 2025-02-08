@@ -11,9 +11,10 @@ export default function Navigation() {
     <nav className="fixed top-0 z-50 w-full">
       <div className="container flex h-24 items-center justify-between">
         <Link href="/" className="text-lg font-medium tracking-tight">
-          david geaney
+          <span className="md:hidden">dg</span>
+          <span className="hidden md:inline">david geaney</span>
         </Link>
-        <div className="flex gap-8">
+        <div className="flex gap-4 sm:gap-8">
           {["about", "projects", "process", "contact"].map((item) => (
             <Link
               key={item}

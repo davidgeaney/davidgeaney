@@ -29,7 +29,7 @@ export default function ProjectCard({ title, subtitle, description, image, link,
           className="object-cover transition-all duration-500 group-hover:scale-105"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex flex-col justify-end">
+        <div className="absolute inset-0 hidden md:flex bg-gradient-to-t from-black/70 to-transparent p-6 flex-col justify-end">
           <div className="max-w-3xl">
             <div className="mb-2 text-white/80 font-sans text-sm uppercase tracking-wider">{subtitle}</div>
             <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2">{title}</h3>
