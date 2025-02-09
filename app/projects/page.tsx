@@ -30,7 +30,7 @@ const projects = [
     year: "2024",
     role: "Designer & Developer",
     deliverables: ["Website Design", "Gallery System", "Image Optimization", "Content Strategy"],
-    website: "https://aperture-flame.vercel.app",
+    website: "https://aperturephotography.vercel.app",
   },
   {
     id: 3,
