@@ -5,6 +5,7 @@ import { Check, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import FaqSection from "@/components/faq-section"
+import Link from "next/link"
 
 const plans = [
   {
@@ -25,7 +26,6 @@ const plans = [
     name: "MONTHLY",
     price: "€150",
     period: "/mo",
-    popular: true,
     description: "Ideal for ongoing projects requiring continuous updates.",
     features: [
       "Design And Development",
@@ -64,7 +64,6 @@ export default function PricingSection() {
               viewport={{ once: true }}
               className="relative bg-background border p-8"
             >
-              {plan.popular && <Badge className="absolute -top-2 -right-2">Popular</Badge>}
               <div className="mb-8">
                 <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-1 mb-2">
@@ -94,7 +93,9 @@ export default function PricingSection() {
                 </ul>
               </div>
 
-              <Button className="w-full">Get started</Button>
+              <Button asChild className="w-full">
+                <Link href="/contact">Get started</Link>
+              </Button>
             </motion.div>
           ))}
         </div>

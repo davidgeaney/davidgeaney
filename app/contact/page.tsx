@@ -5,33 +5,39 @@ import ContactForm from "@/components/contact-form"
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen">
-      <div className="container py-24">
+    <div className="min-h-screen bg-background">
+      <div className="container max-w-6xl py-24 md:py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mb-16"
+          className="mb-16"
         >
-          <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-8">
-            Let&apos;s Create Something Amazing Together
+          <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
+            Let&apos;s Connect
           </h1>
-          <p className="text-xl text-muted-foreground">
-            Ready to start your next project? I&apos;m currently available for new opportunities and would love to hear
-            about your ideas.
+          <p className="text-xl text-muted-foreground max-w-2xl">
+            Have a project in mind or just want to chat? I&apos;m always excited to collaborate on new ideas.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-start max-w-4xl">
+        <div className="grid lg:grid-cols-[2fr,1fr] gap-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <ContactForm />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="space-y-8"
           >
             <div>
-              <h3 className="text-lg font-semibold mb-2">Contact Details</h3>
-              <ul className="space-y-2 text-muted-foreground">
+              <h3 className="text-lg font-semibold mb-4">Contact Details</h3>
+              <ul className="space-y-4 text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +98,7 @@ export default function ContactPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-2">Social Media</h3>
+              <h3 className="text-lg font-semibold mb-4">Social Media</h3>
               <div className="flex gap-4">
                 <a href="https://www.instagram.com/davidgeaneyyy/" className="text-muted-foreground hover:text-foreground">
                   <svg
@@ -107,9 +113,9 @@ export default function ContactPage() {
                     strokeLinejoin="round"
                     className="w-5 h-5"
                   >
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                   </svg>
                   <span className="sr-only">Instagram</span>
                 </a>
@@ -130,16 +136,26 @@ export default function ContactPage() {
                   </svg>
                   <span className="sr-only">Facebook</span>
                 </a>
+                <a href="https://x.com/david_geaney" className="text-muted-foreground hover:text-foreground">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-5 h-5"
+                  >
+                    <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                  </svg>
+                  <span className="sr-only">X</span>
+                </a>
               </div>
             </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mx-auto max-w-xl"
-          >
-            <ContactForm />
           </motion.div>
         </div>
       </div>

@@ -7,24 +7,23 @@ import { cn } from "@/lib/utils"
 
 const faqs = [
   {
-    question: "What is your design process?",
+    question: "Do I need to have content ready before we start?",
     answer:
-      "Our design process begins with understanding your goals and requirements through in-depth consultation. We then move through research, wireframing, design, and development phases, with regular check-ins and feedback sessions throughout.",
+      "It’s helpful but not required. I can design around placeholder text, and if needed, I can assist with content.",
   },
   {
     question: "How long does a typical project take?",
     answer:
-      "Project timelines vary depending on scope and complexity. A typical website project takes 1-2 weeks from start to finish. We'll provide a detailed timeline during our initial consultation.",
+      "It depends on the project size and complexity. A simple website can take around 1-2 weeks, while more complex projects can take longer.",
   },
   {
-    question: "Do you offer ongoing support?",
+    question: "Can you redesign my existing website?",
     answer:
-      "Yes! We offer both post-launch support and ongoing maintenance packages. Our MONTHLY plan includes continuous support and updates to ensure your project stays current and performs optimally.",
+      "Yes! Whether your site just needs a modern refresh or a complete rebuild, I can help improve both its design and functionality.",
   },
   {
-    question: "What technologies do you work with?",
-    answer:
-      "We specialize in modern web technologies including React, Next.js, TypeScript, and Node.js.",
+    question: "What do I need to provide before we start?",
+    answer: "Ideally, any branding materials (logo, colors, etc.), content (text, images), and an idea of what you want your site to achieve. If you don’t have these, I can help guide the process.",
   },
   {
     question: "Do you provide hosting and domain services?",
@@ -34,7 +33,7 @@ const faqs = [
   {
     question: "Will my website be mobile-friendly?",
     answer:
-      "Absolutely! Every website I design is fully responsive, ensuring a seamless experience across all devices, from desktops to smartphones.",
+      "Absolutely. Every website I build is fully responsive, meaning it looks and works great on all devices.",
   },
 ]
 

@@ -1,104 +1,227 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
-const processSteps = [
-  {
-    title: "Discovery",
-    description: "Understanding your goals and vision through in-depth consultation.",
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 },
+}
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
   },
-  {
-    title: "Design",
-    description: "Crafting intuitive interfaces and seamless user experiences.",
-  },
-  {
-    title: "Development",
-    description: "Building responsive, fast, and scalable websites using modern technologies.",
-  },
-  {
-    title: "Delivery",
-    description: "Launching your project and ensuring it meets all requirements.",
-  },
-]
+}
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      <div className="container py-24">
+      {/* Hero Section */}
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto text-center"
+          className="absolute inset-0 z-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.05 }}
+          transition={{ duration: 1 }}
         >
-          <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl mb-6">
-            Websites That Work
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            I design and build clean, modern websites that focus on usability and aesthetics.
-          </p>
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundSize: "30px 30px",
+            }}
+          />
         </motion.div>
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-6">About David</h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">17 Year Old UI/UX Developer From Donegal</p>
+          </motion.div>
+        </div>
+      </section>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-16 grid md:grid-cols-2 gap-12"
-        >
-          <div>
-            <h2 className="font-display text-2xl font-bold mb-4">My Approach</h2>
-            <p className="text-muted-foreground mb-4">
-              My journey into web design and development started with a passion for creating and problem-solving. I
-              taught myself to code during lockdown and quickly realized how powerful great design can be.
-            </p>
-            <p className="text-muted-foreground">
-              I believe in simplicity, usability, and creating digital experiences that make a real impact. Whether it's
-              a personal project or a business website, my goal is to bring ideas to life with clean design and
-              thoughtful development.
-            </p>
-          </div>
-          <div>
-            <h2 className="font-display text-2xl font-bold mb-4">My Process</h2>
-            <ul className="space-y-4">
-              {processSteps.map((step, index) => (
-                <motion.li
-                  key={step.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-start"
-                >
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold mr-3 shrink-0">
-                    {index + 1}
-                  </span>
-                  <div>
-                    <h3 className="font-bold mb-1">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
-                  </div>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-      </div>
-
-      <section className="border-t">
-        <div className="container py-24">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">Let's Work Together</h2>
-            <p className="text-lg text-muted-foreground">
-              Have an interesting project? I'm always open to discussing new opportunities.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 text-lg font-medium hover:underline underline-offset-4"
+      {/* Journey Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="container">
+          <div className="grid lg:grid-cols-[1fr,1.5fr] gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative"
             >
-              Get in Touch
-              <ArrowRight className="h-5 w-5" />
-            </Link>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 -z-10 rounded-3xl transform rotate-3" />
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/imageofme.jpg-U6RH76aSCeiwKZDHbPUSl7TSyEVhOd.jpeg"
+                alt="David Geaney"
+                width={600}
+                height={600}
+                className="rounded-2xl shadow-lg transform -rotate-3 transition-transform duration-500 hover:rotate-0 object-cover"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl font-bold">Web Design Focused on Results</h2>
+              <p className="text-lg text-muted-foreground">
+                My journey into web design began during lockdown when I started teaching myself how to code. Eventually,
+                as I got better at designing and building websites, I figured I might as well reach out to local
+                businesses and offer my help.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                As I began reaching out to local businesses, I quickly noticed how many of them had outdated or poorly
+                designed websites—or, even worse, no website at all. I realised that a bad website can do more harm than
+                good, and in today’s world, not having one is like being invisible.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                I want to make sure your website not only looks good but also serves its purpose—whether it’s attracting
+                new clients, showcasing your work, or making it easy for people to contact you. My goal is to help you
+                make an impact online.
+              </p>
+            </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Approach Section */}
+      <section className="py-24">
+        <div className="container">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-center mb-16"
+          >
+            My Approach
+          </motion.h2>
+          <motion.div
+            variants={stagger}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-8"
+          >
+            {[
+              {
+                title: "Straightforward Design",
+                description: "I keep things simple—no bs, just practical design that works for you and your audience.",
+              },
+              {
+                title: "Functional Design",
+                description:
+                  "I believe a website should be simple and easy to use, without sacrificing style. My goal is to make every interaction smooth for your visitors.",
+              },
+              {
+                title: "Built To Last",
+                description:
+                  "I focus on creating websites that are solid, easy to maintain, and built with long-term success in mind—so you don’t have to worry about your site breaking down over time.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                variants={fadeIn}
+                className="group relative p-8 rounded-xl bg-background/50 hover:bg-background transition-all duration-500 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] hover:drop-shadow-lg"
+              >
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10" />
+                <h3 className="text-xl font-semibold mb-4">{item.title}</h3>
+                <p className="text-muted-foreground relative z-10">{item.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Work With Me Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="container">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-center mb-16"
+          >
+            Why Work With Me
+          </motion.h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            {[
+              {
+                title: "Direct Communication",
+                description:
+                  "No middlemen, no fluff—you talk to me, and we get things done without unnecessary delays.",
+              },
+              {
+                title: "Straightforward, Effective Design",
+                description:
+                  "No overcomplicated fluff. I focus on clean, functional websites that look great and actually serve a purpose—whether that’s bringing in clients or showcasing your work.",
+              },
+              {
+                title: "Designed to Work for You",
+                description: "A website isn’t just about looking good; it should actually help your business grow.",
+              },
+              {
+                title: "Fair Pricing, No Nonsense",
+                description:
+                  "I keep pricing simple and transparent. No hidden costs, no unnecessary add-ons—just quality work at a fair price.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative p-8 rounded-xl bg-background hover:bg-muted/50 transition-colors duration-300"
+              >
+                <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors duration-300">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center space-y-8"
+          >
+            <h2 className="text-4xl font-bold">Ready to Get Started?</h2>
+            <p className="text-lg text-muted-foreground">
+              If you’re a small business wanting to get online or a bigger company needing a fresh look, I’m here to
+              help turn your ideas into reality.
+            </p>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-medium bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
+              >
+                Start Your Project
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>

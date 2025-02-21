@@ -29,13 +29,11 @@ export default function ProjectCard({ title, subtitle, description, image, link,
           className="object-cover transition-all duration-500 group-hover:scale-105"
           priority
         />
-        <div className="absolute inset-0 hidden md:flex bg-gradient-to-t from-black/70 to-transparent p-6 flex-col justify-end">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 md:p-8 flex flex-col justify-end">
           <div className="max-w-3xl">
             <div className="mb-2 text-white/80 font-sans text-sm uppercase tracking-wider">{subtitle}</div>
             <h3 className="font-display text-2xl sm:text-3xl font-bold text-white mb-2">{title}</h3>
-            <p className="text-sm sm:text-base text-white/90 font-sans mb-4 max-w-xl line-clamp-2 sm:line-clamp-3">
-              {description}
-            </p>
+            <p className="text-sm sm:text-base text-white/90 font-sans mb-4 max-w-xl line-clamp-2">{description}</p>
             <div className="text-white/70 font-sans text-sm">{year}</div>
           </div>
         </div>
