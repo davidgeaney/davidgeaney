@@ -32,7 +32,35 @@ const projects = [
     year: "2024",
     role: "Designer & Developer",
     deliverables: ["Website Design", "Gallery System", "Image Optimization", "Content Strategy"],
-    website: "https://aperture-flame.vercel.app",
+    website: "https://aperturephotography.vercel.app",
+  },
+  {
+    id: 3,
+    title: "APERTURE",
+    subtitle: "Photography Portfolio",
+    description:
+      "A sophisticated photography portfolio website showcasing professional work through a minimalist design. The project focused on creating an immersive viewing experience while maintaining optimal performance for high-resolution images.",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aperture-flameportfolioimg.jpg-10NSxaDRUNlqghZosKudiZGM632frc.jpeg",
+    timeframe: "2 weeks",
+    year: "2024",
+    role: "Designer & Developer",
+    deliverables: ["Website Design", "Gallery System", "Image Optimization", "Content Strategy"],
+    website: "https://aperturephotography.vercel.app",
+  },
+  {
+    id: 4,
+    title: "APERTURE",
+    subtitle: "Photography Portfolio",
+    description:
+      "A sophisticated photography portfolio website showcasing professional work through a minimalist design. The project focused on creating an immersive viewing experience while maintaining optimal performance for high-resolution images.",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/aperture-flameportfolioimg.jpg-10NSxaDRUNlqghZosKudiZGM632frc.jpeg",
+    timeframe: "2 weeks",
+    year: "2024",
+    role: "Designer & Developer",
+    deliverables: ["Website Design", "Gallery System", "Image Optimization", "Content Strategy"],
+    website: "https://aperturephotography.vercel.app",
   },
 ]
 
@@ -110,7 +138,7 @@ export default function ProjectsPage() {
               hear about your ideas.
             </p>
             <Link
-              href="/contact"
+              href="https://calendly.com/davidgeaney888/websiteconsultation"
               className="inline-flex items-center justify-center gap-2 text-lg font-medium hover:underline underline-offset-4"
             >
               Schedule a Call
